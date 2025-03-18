@@ -19,10 +19,12 @@ extism call hello.wasm say_hello \
 
 ```bash
 docker run --rm -v "$PWD":/hello -w /hello k33g/wasm-builder:0.0.3 \
-  tinygo build -scheduler=none --no-debug \
+  tinygo build \
     -o hello.wasm \
-    -target wasi main.go
+    -target wasip1 -buildmode=c-shared main.go
 ```
+
+
 
 ## Run with Docker
 

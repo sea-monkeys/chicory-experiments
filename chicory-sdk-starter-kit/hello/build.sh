@@ -1,6 +1,6 @@
 #!/bin/bash
-tinygo build -scheduler=none --no-debug \
+tinygo build \
   -o hello.wasm \
-  -target wasi main.go
+  -target wasip1 -buildmode=c-shared main.go
 
 ls -lh *.wasm

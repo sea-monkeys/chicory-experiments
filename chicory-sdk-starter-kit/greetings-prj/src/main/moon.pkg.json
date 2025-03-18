@@ -1,0 +1,18 @@
+{
+  "is-main": true,
+  "import": [
+    "extism/moonbit-pdk/pdk/host"
+  ],
+  "link": {
+    "wasm": {
+      "exports": [
+        "hello_world",
+        "hello",
+        "vulcan_salute"
+      ],
+      "export-memory-name": "memory"
+    }
+  }
+}
+
+

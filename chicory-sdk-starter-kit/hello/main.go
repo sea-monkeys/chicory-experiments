@@ -1,9 +1,11 @@
 package main
 
-import "github.com/extism/go-pdk"
+import (
+"github.com/extism/go-pdk"
+)
 
-//export say_hello
-func say_hello() {
+//go:wasmexport say_hello
+func say_hello() int32 {
 
 	// read input
 	// read the function argument from the memory
@@ -12,13 +14,14 @@ func say_hello() {
 	// create output
 	output := "🎉 Extism is 💜, 🌍, by " + string(input)
 	
-	// return the value
-	// copy output to host memory
-	mem := pdk.AllocateString(output)
-	pdk.OutputMemory(mem)
+    pdk.OutputString(output)
+    return 0
 	
 }
 
+
+/*
 func main() {
 	//say_hello()
 }
+*/
